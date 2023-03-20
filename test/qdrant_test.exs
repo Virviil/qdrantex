@@ -1,8 +1,8 @@
-defmodule QdrantTest do
+defmodule QdrantexTest do
   use ExUnit.Case
-  doctest Qdrant
+  doctest Qdrantex
 
   test "greets the world" do
-    assert Qdrant.hello() == :world
+    assert Qdrantex.hello() == :world
   end
 end

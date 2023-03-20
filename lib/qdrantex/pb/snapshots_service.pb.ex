@@ -1,35 +1,35 @@
-defmodule Qdrant.CreateFullSnapshotRequest do
+defmodule Qdrantex.Pb.Qdrant.CreateFullSnapshotRequest do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 end
 
-defmodule Qdrant.ListFullSnapshotsRequest do
+defmodule Qdrantex.Pb.Qdrant.ListFullSnapshotsRequest do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 end
 
-defmodule Qdrant.DeleteFullSnapshotRequest do
+defmodule Qdrantex.Pb.Qdrant.DeleteFullSnapshotRequest do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :snapshot_name, 1, type: :string, json_name: "snapshotName"
 end
 
-defmodule Qdrant.CreateSnapshotRequest do
+defmodule Qdrantex.Pb.Qdrant.CreateSnapshotRequest do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
 end
 
-defmodule Qdrant.ListSnapshotsRequest do
+defmodule Qdrantex.Pb.Qdrant.ListSnapshotsRequest do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
 end
 
-defmodule Qdrant.DeleteSnapshotRequest do
+defmodule Qdrantex.Pb.Qdrant.DeleteSnapshotRequest do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
@@ -37,7 +37,7 @@ defmodule Qdrant.DeleteSnapshotRequest do
   field :snapshot_name, 2, type: :string, json_name: "snapshotName"
 end
 
-defmodule Qdrant.SnapshotDescription do
+defmodule Qdrantex.Pb.Qdrant.SnapshotDescription do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
@@ -46,54 +46,60 @@ defmodule Qdrant.SnapshotDescription do
   field :size, 3, type: :int64
 end
 
-defmodule Qdrant.CreateSnapshotResponse do
+defmodule Qdrantex.Pb.Qdrant.CreateSnapshotResponse do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :snapshot_description, 1,
-    type: Qdrant.SnapshotDescription,
+    type: Qdrantex.Pb.Qdrant.SnapshotDescription,
     json_name: "snapshotDescription"
 
   field :time, 2, type: :double
 end
 
-defmodule Qdrant.ListSnapshotsResponse do
+defmodule Qdrantex.Pb.Qdrant.ListSnapshotsResponse do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :snapshot_descriptions, 1,
     repeated: true,
-    type: Qdrant.SnapshotDescription,
+    type: Qdrantex.Pb.Qdrant.SnapshotDescription,
     json_name: "snapshotDescriptions"
 
   field :time, 2, type: :double
 end
 
-defmodule Qdrant.DeleteSnapshotResponse do
+defmodule Qdrantex.Pb.Qdrant.DeleteSnapshotResponse do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :time, 1, type: :double
 end
 
-defmodule Qdrant.Snapshots.Service do
+defmodule Qdrantex.Pb.Qdrant.Snapshots.Service do
   @moduledoc false
   use GRPC.Service, name: "qdrant.Snapshots", protoc_gen_elixir_version: "0.11.0"
 
-  rpc :Create, Qdrant.CreateSnapshotRequest, Qdrant.CreateSnapshotResponse
+  rpc :Create, Qdrantex.Pb.Qdrant.CreateSnapshotRequest, Qdrantex.Pb.Qdrant.CreateSnapshotResponse
 
-  rpc :List, Qdrant.ListSnapshotsRequest, Qdrant.ListSnapshotsResponse
+  rpc :List, Qdrantex.Pb.Qdrant.ListSnapshotsRequest, Qdrantex.Pb.Qdrant.ListSnapshotsResponse
 
-  rpc :Delete, Qdrant.DeleteSnapshotRequest, Qdrant.DeleteSnapshotResponse
+  rpc :Delete, Qdrantex.Pb.Qdrant.DeleteSnapshotRequest, Qdrantex.Pb.Qdrant.DeleteSnapshotResponse
 
-  rpc :CreateFull, Qdrant.CreateFullSnapshotRequest, Qdrant.CreateSnapshotResponse
+  rpc :CreateFull,
+      Qdrantex.Pb.Qdrant.CreateFullSnapshotRequest,
+      Qdrantex.Pb.Qdrant.CreateSnapshotResponse
 
-  rpc :ListFull, Qdrant.ListFullSnapshotsRequest, Qdrant.ListSnapshotsResponse
+  rpc :ListFull,
+      Qdrantex.Pb.Qdrant.ListFullSnapshotsRequest,
+      Qdrantex.Pb.Qdrant.ListSnapshotsResponse
 
-  rpc :DeleteFull, Qdrant.DeleteFullSnapshotRequest, Qdrant.DeleteSnapshotResponse
+  rpc :DeleteFull,
+      Qdrantex.Pb.Qdrant.DeleteFullSnapshotRequest,
+      Qdrantex.Pb.Qdrant.DeleteSnapshotResponse
 end
 
-defmodule Qdrant.Snapshots.Stub do
+defmodule Qdrantex.Pb.Qdrant.Snapshots.Stub do
   @moduledoc false
-  use GRPC.Stub, service: Qdrant.Snapshots.Service
+  use GRPC.Stub, service: Qdrantex.Pb.Qdrant.Snapshots.Service
 end

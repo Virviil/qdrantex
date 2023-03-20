@@ -1,4 +1,4 @@
-defmodule Qdrant do
+defmodule Qdrantex do
   defmacro __using__(opts) do
     # Running checks in compile time
     case Keyword.fetch(opts, :otp_app) do
@@ -11,7 +11,7 @@ defmodule Qdrant do
 
       def start_link(opts) do
         DBConnection.start_link(
-          Qdrant.Protocol,
+          Qdrantex.Protocol,
           opts =
             [
               # Default opts
@@ -27,17 +27,17 @@ defmodule Qdrant do
       end
 
       def execute(module, rpc, data) do
-        DBConnection.execute(@name, %Qdrant.Query{module: module, rpc: rpc, data: data}, [])
+        DBConnection.execute(@name, %Qdrantex.Query{module: module, rpc: rpc, data: data}, [])
       end
 
       def prepare(module, rpc, data) do
-        DBConnection.prepare(@name, %Qdrant.Query{module: module, rpc: rpc, data: data}, [])
+        DBConnection.prepare(@name, %Qdrantex.Query{module: module, rpc: rpc, data: data}, [])
       end
     end
   end
 end
 
-defmodule Qdrant.Repo do
-  use Qdrant,
-    otp_app: :qdrant
+defmodule Qdrantex.Repo do
+  use Qdrantex,
+    otp_app: :qdrantex
 end

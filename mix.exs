@@ -1,9 +1,9 @@
-defmodule Qdrant.MixProject do
+defmodule Qdrantex.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :qdrant,
+      app: :qdrantex,
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
@@ -22,7 +22,7 @@ defmodule Qdrant.MixProject do
   defp aliases() do
     [
       protoc: [
-        "cmd protoc -I proto --elixir_out=plugins=grpc:./lib/pb proto/*.proto"
+        "cmd protoc -I proto --elixir_opt=package_prefix=qdrantex.pb --elixir_out=plugins=grpc:./lib/qdrantex/pb proto/*.proto"
       ]
     ]
   end

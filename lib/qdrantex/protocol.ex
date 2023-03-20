@@ -1,8 +1,8 @@
-defmodule Qdrant.Error do
+defmodule Qdrantex.Error do
   defexception [:message]
 end
 
-defmodule Qdrant.Protocol do
+defmodule Qdrantex.Protocol do
   use DBConnection
 
   defstruct [:chan]
@@ -26,18 +26,25 @@ defmodule Qdrant.Protocol do
         {:ok, %__MODULE__{chan: chan}}
 
       {:error, reason} ->
-        {:error, %Qdrant.Error{message: "error when connecting #{inspect(reason)}"}}
+        {:error, %Qdrantex.Error{message: "error when connecting #{inspect(reason)}"}}
     end
   end
 
   @impl true
+  @spec ping(%{:chan => GRPC.Channel.t(), optional(any) => any}) ::
+          {:ok, %{:chan => GRPC.Channel.t(), optional(any) => any}}
+          | {:disconnect, %Qdrantex.Error{__exception__: true, message: <<_::64, _::_*8>>},
+             %{:chan => GRPC.Channel.t(), optional(any) => any}}
   def ping(%{chan: chan} = state) do
-    case Qdrant.Qdrant.Stub.health_check(chan, Qdrant.HealthCheckRequest.new()) do
+    case Qdrantex.Pb.Qdrant.Qdrant.Stub.health_check(
+           chan,
+           Qdrantex.Pb.Qdrant.HealthCheckRequest.new()
+         ) do
       {:ok, _} ->
         {:ok, state}
 
       {_, reason} ->
-        {:disconnect, %Qdrant.Error{message: "ping failed with reason: #{inspect(reason)}"},
+        {:disconnect, %Qdrantex.Error{message: "ping failed with reason: #{inspect(reason)}"},
          state}
     end
   end
@@ -69,7 +76,7 @@ defmodule Qdrant.Protocol do
         {:ok, query, response, state}
 
       {:error, reason} ->
-        {:disconnect, %Qdrant.Error{message: "error when executing query: #{inspect(reason)}"},
+        {:disconnect, %Qdrantex.Error{message: "error when executing query: #{inspect(reason)}"},
          state}
     end
   end

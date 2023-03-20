@@ -1,4 +1,4 @@
-defmodule Qdrant.Query do
+defmodule Qdrantex.Query do
   defstruct [:module, :rpc, :data]
 
   defimpl DBConnection.Query do
