@@ -1,6 +1,4 @@
 defmodule Qdrantex.Qdrant.Distance do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :UnknownDistance, 0
@@ -11,8 +9,6 @@ defmodule Qdrantex.Qdrant.Distance do
 end
 
 defmodule Qdrantex.Qdrant.CollectionStatus do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :UnknownCollectionStatus, 0
@@ -22,8 +18,6 @@ defmodule Qdrantex.Qdrant.CollectionStatus do
 end
 
 defmodule Qdrantex.Qdrant.PayloadSchemaType do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :UnknownType, 0
@@ -37,8 +31,6 @@ defmodule Qdrantex.Qdrant.PayloadSchemaType do
 end
 
 defmodule Qdrantex.Qdrant.QuantizationType do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :UnknownQuantization, 0
@@ -46,8 +38,6 @@ defmodule Qdrantex.Qdrant.QuantizationType do
 end
 
 defmodule Qdrantex.Qdrant.CompressionRatio do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :x4, 0
@@ -58,8 +48,6 @@ defmodule Qdrantex.Qdrant.CompressionRatio do
 end
 
 defmodule Qdrantex.Qdrant.ShardingMethod do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :Auto, 0
@@ -67,8 +55,6 @@ defmodule Qdrantex.Qdrant.ShardingMethod do
 end
 
 defmodule Qdrantex.Qdrant.TokenizerType do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :Unknown, 0
@@ -79,8 +65,6 @@ defmodule Qdrantex.Qdrant.TokenizerType do
 end
 
 defmodule Qdrantex.Qdrant.ReplicaState do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :Active, 0
@@ -93,8 +77,6 @@ defmodule Qdrantex.Qdrant.ReplicaState do
 end
 
 defmodule Qdrantex.Qdrant.ShardTransferMethod do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :StreamRecords, 0
@@ -103,8 +85,6 @@ defmodule Qdrantex.Qdrant.ShardTransferMethod do
 end
 
 defmodule Qdrantex.Qdrant.VectorParams do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :size, 1, type: :uint64
@@ -124,8 +104,6 @@ defmodule Qdrantex.Qdrant.VectorParams do
 end
 
 defmodule Qdrantex.Qdrant.VectorParamsDiff do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :hnsw_config, 1,
@@ -142,8 +120,6 @@ defmodule Qdrantex.Qdrant.VectorParamsDiff do
 end
 
 defmodule Qdrantex.Qdrant.VectorParamsMap.MapEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -151,16 +127,12 @@ defmodule Qdrantex.Qdrant.VectorParamsMap.MapEntry do
 end
 
 defmodule Qdrantex.Qdrant.VectorParamsMap do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :map, 1, repeated: true, type: Qdrantex.Qdrant.VectorParamsMap.MapEntry, map: true
 end
 
 defmodule Qdrantex.Qdrant.VectorParamsDiffMap.MapEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -168,16 +140,12 @@ defmodule Qdrantex.Qdrant.VectorParamsDiffMap.MapEntry do
 end
 
 defmodule Qdrantex.Qdrant.VectorParamsDiffMap do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :map, 1, repeated: true, type: Qdrantex.Qdrant.VectorParamsDiffMap.MapEntry, map: true
 end
 
 defmodule Qdrantex.Qdrant.VectorsConfig do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :config, 0
@@ -187,8 +155,6 @@ defmodule Qdrantex.Qdrant.VectorsConfig do
 end
 
 defmodule Qdrantex.Qdrant.VectorsConfigDiff do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :config, 0
@@ -202,16 +168,12 @@ defmodule Qdrantex.Qdrant.VectorsConfigDiff do
 end
 
 defmodule Qdrantex.Qdrant.SparseVectorParams do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :index, 1, proto3_optional: true, type: Qdrantex.Qdrant.SparseIndexConfig
 end
 
 defmodule Qdrantex.Qdrant.SparseVectorConfig.MapEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -219,40 +181,30 @@ defmodule Qdrantex.Qdrant.SparseVectorConfig.MapEntry do
 end
 
 defmodule Qdrantex.Qdrant.SparseVectorConfig do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :map, 1, repeated: true, type: Qdrantex.Qdrant.SparseVectorConfig.MapEntry, map: true
 end
 
 defmodule Qdrantex.Qdrant.GetCollectionInfoRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
 end
 
 defmodule Qdrantex.Qdrant.CollectionExistsRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
 end
 
 defmodule Qdrantex.Qdrant.CollectionExists do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :exists, 1, type: :bool
 end
 
 defmodule Qdrantex.Qdrant.CollectionExistsResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: Qdrantex.Qdrant.CollectionExists
@@ -260,22 +212,16 @@ defmodule Qdrantex.Qdrant.CollectionExistsResponse do
 end
 
 defmodule Qdrantex.Qdrant.ListCollectionsRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 end
 
 defmodule Qdrantex.Qdrant.CollectionDescription do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :name, 1, type: :string
 end
 
 defmodule Qdrantex.Qdrant.GetCollectionInfoResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: Qdrantex.Qdrant.CollectionInfo
@@ -283,8 +229,6 @@ defmodule Qdrantex.Qdrant.GetCollectionInfoResponse do
 end
 
 defmodule Qdrantex.Qdrant.ListCollectionsResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collections, 1, repeated: true, type: Qdrantex.Qdrant.CollectionDescription
@@ -292,8 +236,6 @@ defmodule Qdrantex.Qdrant.ListCollectionsResponse do
 end
 
 defmodule Qdrantex.Qdrant.OptimizerStatus do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :ok, 1, type: :bool
@@ -301,8 +243,6 @@ defmodule Qdrantex.Qdrant.OptimizerStatus do
 end
 
 defmodule Qdrantex.Qdrant.HnswConfigDiff do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :m, 1, proto3_optional: true, type: :uint64
@@ -323,8 +263,6 @@ defmodule Qdrantex.Qdrant.HnswConfigDiff do
 end
 
 defmodule Qdrantex.Qdrant.SparseIndexConfig do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :full_scan_threshold, 1,
@@ -336,8 +274,6 @@ defmodule Qdrantex.Qdrant.SparseIndexConfig do
 end
 
 defmodule Qdrantex.Qdrant.WalConfigDiff do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :wal_capacity_mb, 1, proto3_optional: true, type: :uint64, json_name: "walCapacityMb"
@@ -349,8 +285,6 @@ defmodule Qdrantex.Qdrant.WalConfigDiff do
 end
 
 defmodule Qdrantex.Qdrant.OptimizersConfigDiff do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :deleted_threshold, 1, proto3_optional: true, type: :double, json_name: "deletedThreshold"
@@ -385,8 +319,6 @@ defmodule Qdrantex.Qdrant.OptimizersConfigDiff do
 end
 
 defmodule Qdrantex.Qdrant.ScalarQuantization do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :type, 1, type: Qdrantex.Qdrant.QuantizationType, enum: true
@@ -395,8 +327,6 @@ defmodule Qdrantex.Qdrant.ScalarQuantization do
 end
 
 defmodule Qdrantex.Qdrant.ProductQuantization do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :compression, 1, type: Qdrantex.Qdrant.CompressionRatio, enum: true
@@ -404,16 +334,12 @@ defmodule Qdrantex.Qdrant.ProductQuantization do
 end
 
 defmodule Qdrantex.Qdrant.BinaryQuantization do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :always_ram, 1, proto3_optional: true, type: :bool, json_name: "alwaysRam"
 end
 
 defmodule Qdrantex.Qdrant.QuantizationConfig do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :quantization, 0
@@ -424,14 +350,10 @@ defmodule Qdrantex.Qdrant.QuantizationConfig do
 end
 
 defmodule Qdrantex.Qdrant.Disabled do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 end
 
 defmodule Qdrantex.Qdrant.QuantizationConfigDiff do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :quantization, 0
@@ -443,8 +365,6 @@ defmodule Qdrantex.Qdrant.QuantizationConfigDiff do
 end
 
 defmodule Qdrantex.Qdrant.CreateCollection do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -506,8 +426,6 @@ defmodule Qdrantex.Qdrant.CreateCollection do
 end
 
 defmodule Qdrantex.Qdrant.UpdateCollection do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -542,8 +460,6 @@ defmodule Qdrantex.Qdrant.UpdateCollection do
 end
 
 defmodule Qdrantex.Qdrant.DeleteCollection do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -551,8 +467,6 @@ defmodule Qdrantex.Qdrant.DeleteCollection do
 end
 
 defmodule Qdrantex.Qdrant.CollectionOperationResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: :bool
@@ -560,8 +474,6 @@ defmodule Qdrantex.Qdrant.CollectionOperationResponse do
 end
 
 defmodule Qdrantex.Qdrant.CollectionParams do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :shard_number, 3, type: :uint32, json_name: "shardNumber"
@@ -600,8 +512,6 @@ defmodule Qdrantex.Qdrant.CollectionParams do
 end
 
 defmodule Qdrantex.Qdrant.CollectionParamsDiff do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :replication_factor, 1,
@@ -623,8 +533,6 @@ defmodule Qdrantex.Qdrant.CollectionParamsDiff do
 end
 
 defmodule Qdrantex.Qdrant.CollectionConfig do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :params, 1, type: Qdrantex.Qdrant.CollectionParams
@@ -643,8 +551,6 @@ defmodule Qdrantex.Qdrant.CollectionConfig do
 end
 
 defmodule Qdrantex.Qdrant.TextIndexParams do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :tokenizer, 1, type: Qdrantex.Qdrant.TokenizerType, enum: true
@@ -654,8 +560,6 @@ defmodule Qdrantex.Qdrant.TextIndexParams do
 end
 
 defmodule Qdrantex.Qdrant.IntegerIndexParams do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :lookup, 1, type: :bool
@@ -663,8 +567,6 @@ defmodule Qdrantex.Qdrant.IntegerIndexParams do
 end
 
 defmodule Qdrantex.Qdrant.PayloadIndexParams do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :index_params, 0
@@ -681,8 +583,6 @@ defmodule Qdrantex.Qdrant.PayloadIndexParams do
 end
 
 defmodule Qdrantex.Qdrant.PayloadSchemaInfo do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :data_type, 1, type: Qdrantex.Qdrant.PayloadSchemaType, json_name: "dataType", enum: true
@@ -691,8 +591,6 @@ defmodule Qdrantex.Qdrant.PayloadSchemaInfo do
 end
 
 defmodule Qdrantex.Qdrant.CollectionInfo.PayloadSchemaEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -700,8 +598,6 @@ defmodule Qdrantex.Qdrant.CollectionInfo.PayloadSchemaEntry do
 end
 
 defmodule Qdrantex.Qdrant.CollectionInfo do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :status, 1, type: Qdrantex.Qdrant.CollectionStatus, enum: true
@@ -725,8 +621,6 @@ defmodule Qdrantex.Qdrant.CollectionInfo do
 end
 
 defmodule Qdrantex.Qdrant.ChangeAliases do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :actions, 1, repeated: true, type: Qdrantex.Qdrant.AliasOperations
@@ -734,8 +628,6 @@ defmodule Qdrantex.Qdrant.ChangeAliases do
 end
 
 defmodule Qdrantex.Qdrant.AliasOperations do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :action, 0
@@ -746,8 +638,6 @@ defmodule Qdrantex.Qdrant.AliasOperations do
 end
 
 defmodule Qdrantex.Qdrant.CreateAlias do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -755,8 +645,6 @@ defmodule Qdrantex.Qdrant.CreateAlias do
 end
 
 defmodule Qdrantex.Qdrant.RenameAlias do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :old_alias_name, 1, type: :string, json_name: "oldAliasName"
@@ -764,30 +652,22 @@ defmodule Qdrantex.Qdrant.RenameAlias do
 end
 
 defmodule Qdrantex.Qdrant.DeleteAlias do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :alias_name, 1, type: :string, json_name: "aliasName"
 end
 
 defmodule Qdrantex.Qdrant.ListAliasesRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 end
 
 defmodule Qdrantex.Qdrant.ListCollectionAliasesRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
 end
 
 defmodule Qdrantex.Qdrant.AliasDescription do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :alias_name, 1, type: :string, json_name: "aliasName"
@@ -795,8 +675,6 @@ defmodule Qdrantex.Qdrant.AliasDescription do
 end
 
 defmodule Qdrantex.Qdrant.ListAliasesResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :aliases, 1, repeated: true, type: Qdrantex.Qdrant.AliasDescription
@@ -804,16 +682,12 @@ defmodule Qdrantex.Qdrant.ListAliasesResponse do
 end
 
 defmodule Qdrantex.Qdrant.CollectionClusterInfoRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
 end
 
 defmodule Qdrantex.Qdrant.ShardKey do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :key, 0
@@ -823,8 +697,6 @@ defmodule Qdrantex.Qdrant.ShardKey do
 end
 
 defmodule Qdrantex.Qdrant.LocalShardInfo do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :shard_id, 1, type: :uint32, json_name: "shardId"
@@ -838,8 +710,6 @@ defmodule Qdrantex.Qdrant.LocalShardInfo do
 end
 
 defmodule Qdrantex.Qdrant.RemoteShardInfo do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :shard_id, 1, type: :uint32, json_name: "shardId"
@@ -853,8 +723,6 @@ defmodule Qdrantex.Qdrant.RemoteShardInfo do
 end
 
 defmodule Qdrantex.Qdrant.ShardTransferInfo do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :shard_id, 1, type: :uint32, json_name: "shardId"
@@ -864,8 +732,6 @@ defmodule Qdrantex.Qdrant.ShardTransferInfo do
 end
 
 defmodule Qdrantex.Qdrant.CollectionClusterInfoResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :peer_id, 1, type: :uint64, json_name: "peerId"
@@ -888,8 +754,6 @@ defmodule Qdrantex.Qdrant.CollectionClusterInfoResponse do
 end
 
 defmodule Qdrantex.Qdrant.MoveShard do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :shard_id, 1, type: :uint32, json_name: "shardId"
@@ -899,8 +763,6 @@ defmodule Qdrantex.Qdrant.MoveShard do
 end
 
 defmodule Qdrantex.Qdrant.RestartTransfer do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :shard_id, 1, type: :uint32, json_name: "shardId"
@@ -910,8 +772,6 @@ defmodule Qdrantex.Qdrant.RestartTransfer do
 end
 
 defmodule Qdrantex.Qdrant.Replica do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :shard_id, 1, type: :uint32, json_name: "shardId"
@@ -919,8 +779,6 @@ defmodule Qdrantex.Qdrant.Replica do
 end
 
 defmodule Qdrantex.Qdrant.CreateShardKey do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :shard_key, 1, type: Qdrantex.Qdrant.ShardKey, json_name: "shardKey"
@@ -935,16 +793,12 @@ defmodule Qdrantex.Qdrant.CreateShardKey do
 end
 
 defmodule Qdrantex.Qdrant.DeleteShardKey do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :shard_key, 1, type: Qdrantex.Qdrant.ShardKey, json_name: "shardKey"
 end
 
 defmodule Qdrantex.Qdrant.UpdateCollectionClusterSetupRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :operation, 0
@@ -979,16 +833,12 @@ defmodule Qdrantex.Qdrant.UpdateCollectionClusterSetupRequest do
 end
 
 defmodule Qdrantex.Qdrant.UpdateCollectionClusterSetupResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: :bool
 end
 
 defmodule Qdrantex.Qdrant.CreateShardKeyRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -997,8 +847,6 @@ defmodule Qdrantex.Qdrant.CreateShardKeyRequest do
 end
 
 defmodule Qdrantex.Qdrant.DeleteShardKeyRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -1007,16 +855,12 @@ defmodule Qdrantex.Qdrant.DeleteShardKeyRequest do
 end
 
 defmodule Qdrantex.Qdrant.CreateShardKeyResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: :bool
 end
 
 defmodule Qdrantex.Qdrant.DeleteShardKeyResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: :bool

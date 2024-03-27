@@ -1,12 +1,8 @@
 defmodule Qdrantex.Qdrant.GetConsensusCommitRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 end
 
 defmodule Qdrantex.Qdrant.GetConsensusCommitResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :commit, 1, type: :int64
@@ -14,8 +10,6 @@ defmodule Qdrantex.Qdrant.GetConsensusCommitResponse do
 end
 
 defmodule Qdrantex.Qdrant.WaitOnConsensusCommitRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :commit, 1, type: :int64
@@ -24,16 +18,12 @@ defmodule Qdrantex.Qdrant.WaitOnConsensusCommitRequest do
 end
 
 defmodule Qdrantex.Qdrant.WaitOnConsensusCommitResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :ok, 1, type: :bool
 end
 
 defmodule Qdrantex.Qdrant.QdrantInternal.Service do
-  @moduledoc false
-
   use GRPC.Service, name: "qdrant.QdrantInternal", protoc_gen_elixir_version: "0.12.0"
 
   rpc :GetConsensusCommit,
@@ -46,7 +36,5 @@ defmodule Qdrantex.Qdrant.QdrantInternal.Service do
 end
 
 defmodule Qdrantex.Qdrant.QdrantInternal.Stub do
-  @moduledoc false
-
   use GRPC.Stub, service: Qdrantex.Qdrant.QdrantInternal.Service
 end

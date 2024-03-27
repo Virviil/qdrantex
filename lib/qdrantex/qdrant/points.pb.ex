@@ -1,6 +1,4 @@
 defmodule Qdrantex.Qdrant.WriteOrderingType do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :Weak, 0
@@ -9,8 +7,6 @@ defmodule Qdrantex.Qdrant.WriteOrderingType do
 end
 
 defmodule Qdrantex.Qdrant.ReadConsistencyType do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :All, 0
@@ -19,8 +15,6 @@ defmodule Qdrantex.Qdrant.ReadConsistencyType do
 end
 
 defmodule Qdrantex.Qdrant.FieldType do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :FieldTypeKeyword, 0
@@ -33,8 +27,6 @@ defmodule Qdrantex.Qdrant.FieldType do
 end
 
 defmodule Qdrantex.Qdrant.Direction do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :Asc, 0
@@ -42,8 +34,6 @@ defmodule Qdrantex.Qdrant.Direction do
 end
 
 defmodule Qdrantex.Qdrant.RecommendStrategy do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :AverageVector, 0
@@ -51,8 +41,6 @@ defmodule Qdrantex.Qdrant.RecommendStrategy do
 end
 
 defmodule Qdrantex.Qdrant.UpdateStatus do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :UnknownUpdateStatus, 0
@@ -62,16 +50,12 @@ defmodule Qdrantex.Qdrant.UpdateStatus do
 end
 
 defmodule Qdrantex.Qdrant.WriteOrdering do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :type, 1, type: Qdrantex.Qdrant.WriteOrderingType, enum: true
 end
 
 defmodule Qdrantex.Qdrant.ReadConsistency do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :value, 0
@@ -81,8 +65,6 @@ defmodule Qdrantex.Qdrant.ReadConsistency do
 end
 
 defmodule Qdrantex.Qdrant.PointId do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :point_id_options, 0
@@ -92,16 +74,12 @@ defmodule Qdrantex.Qdrant.PointId do
 end
 
 defmodule Qdrantex.Qdrant.SparseIndices do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :data, 1, repeated: true, type: :uint32
 end
 
 defmodule Qdrantex.Qdrant.Vector do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :data, 1, repeated: true, type: :float
@@ -109,16 +87,12 @@ defmodule Qdrantex.Qdrant.Vector do
 end
 
 defmodule Qdrantex.Qdrant.ShardKeySelector do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :shard_keys, 1, repeated: true, type: Qdrantex.Qdrant.ShardKey, json_name: "shardKeys"
 end
 
 defmodule Qdrantex.Qdrant.UpsertPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -133,8 +107,6 @@ defmodule Qdrantex.Qdrant.UpsertPoints do
 end
 
 defmodule Qdrantex.Qdrant.DeletePoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -149,8 +121,6 @@ defmodule Qdrantex.Qdrant.DeletePoints do
 end
 
 defmodule Qdrantex.Qdrant.GetPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -174,8 +144,6 @@ defmodule Qdrantex.Qdrant.GetPoints do
 end
 
 defmodule Qdrantex.Qdrant.UpdatePointVectors do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -190,8 +158,6 @@ defmodule Qdrantex.Qdrant.UpdatePointVectors do
 end
 
 defmodule Qdrantex.Qdrant.PointVectors do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :id, 1, type: Qdrantex.Qdrant.PointId
@@ -199,8 +165,6 @@ defmodule Qdrantex.Qdrant.PointVectors do
 end
 
 defmodule Qdrantex.Qdrant.DeletePointVectors do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -216,8 +180,6 @@ defmodule Qdrantex.Qdrant.DeletePointVectors do
 end
 
 defmodule Qdrantex.Qdrant.SetPayloadPoints.PayloadEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -225,8 +187,6 @@ defmodule Qdrantex.Qdrant.SetPayloadPoints.PayloadEntry do
 end
 
 defmodule Qdrantex.Qdrant.SetPayloadPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -253,8 +213,6 @@ defmodule Qdrantex.Qdrant.SetPayloadPoints do
 end
 
 defmodule Qdrantex.Qdrant.DeletePayloadPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -275,8 +233,6 @@ defmodule Qdrantex.Qdrant.DeletePayloadPoints do
 end
 
 defmodule Qdrantex.Qdrant.ClearPayloadPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -291,8 +247,6 @@ defmodule Qdrantex.Qdrant.ClearPayloadPoints do
 end
 
 defmodule Qdrantex.Qdrant.CreateFieldIndexCollection do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -314,8 +268,6 @@ defmodule Qdrantex.Qdrant.CreateFieldIndexCollection do
 end
 
 defmodule Qdrantex.Qdrant.DeleteFieldIndexCollection do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -325,24 +277,18 @@ defmodule Qdrantex.Qdrant.DeleteFieldIndexCollection do
 end
 
 defmodule Qdrantex.Qdrant.PayloadIncludeSelector do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :fields, 1, repeated: true, type: :string
 end
 
 defmodule Qdrantex.Qdrant.PayloadExcludeSelector do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :fields, 1, repeated: true, type: :string
 end
 
 defmodule Qdrantex.Qdrant.WithPayloadSelector do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :selector_options, 0
@@ -353,8 +299,6 @@ defmodule Qdrantex.Qdrant.WithPayloadSelector do
 end
 
 defmodule Qdrantex.Qdrant.NamedVectors.VectorsEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -362,16 +306,12 @@ defmodule Qdrantex.Qdrant.NamedVectors.VectorsEntry do
 end
 
 defmodule Qdrantex.Qdrant.NamedVectors do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :vectors, 1, repeated: true, type: Qdrantex.Qdrant.NamedVectors.VectorsEntry, map: true
 end
 
 defmodule Qdrantex.Qdrant.Vectors do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :vectors_options, 0
@@ -381,16 +321,12 @@ defmodule Qdrantex.Qdrant.Vectors do
 end
 
 defmodule Qdrantex.Qdrant.VectorsSelector do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :names, 1, repeated: true, type: :string
 end
 
 defmodule Qdrantex.Qdrant.WithVectorsSelector do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :selector_options, 0
@@ -400,8 +336,6 @@ defmodule Qdrantex.Qdrant.WithVectorsSelector do
 end
 
 defmodule Qdrantex.Qdrant.QuantizationSearchParams do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :ignore, 1, proto3_optional: true, type: :bool
@@ -410,8 +344,6 @@ defmodule Qdrantex.Qdrant.QuantizationSearchParams do
 end
 
 defmodule Qdrantex.Qdrant.SearchParams do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :hnsw_ef, 1, proto3_optional: true, type: :uint64, json_name: "hnswEf"
@@ -421,8 +353,6 @@ defmodule Qdrantex.Qdrant.SearchParams do
 end
 
 defmodule Qdrantex.Qdrant.SearchPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -459,8 +389,6 @@ defmodule Qdrantex.Qdrant.SearchPoints do
 end
 
 defmodule Qdrantex.Qdrant.SearchBatchPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -479,8 +407,6 @@ defmodule Qdrantex.Qdrant.SearchBatchPoints do
 end
 
 defmodule Qdrantex.Qdrant.WithLookup do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection, 1, type: :string
@@ -497,8 +423,6 @@ defmodule Qdrantex.Qdrant.WithLookup do
 end
 
 defmodule Qdrantex.Qdrant.SearchPointGroups do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -542,8 +466,6 @@ defmodule Qdrantex.Qdrant.SearchPointGroups do
 end
 
 defmodule Qdrantex.Qdrant.StartFrom do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :value, 0
@@ -555,8 +477,6 @@ defmodule Qdrantex.Qdrant.StartFrom do
 end
 
 defmodule Qdrantex.Qdrant.OrderBy do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -569,8 +489,6 @@ defmodule Qdrantex.Qdrant.OrderBy do
 end
 
 defmodule Qdrantex.Qdrant.ScrollPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -598,8 +516,6 @@ defmodule Qdrantex.Qdrant.ScrollPoints do
 end
 
 defmodule Qdrantex.Qdrant.LookupLocation do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -612,8 +528,6 @@ defmodule Qdrantex.Qdrant.LookupLocation do
 end
 
 defmodule Qdrantex.Qdrant.RecommendPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -663,8 +577,6 @@ defmodule Qdrantex.Qdrant.RecommendPoints do
 end
 
 defmodule Qdrantex.Qdrant.RecommendBatchPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -683,8 +595,6 @@ defmodule Qdrantex.Qdrant.RecommendBatchPoints do
 end
 
 defmodule Qdrantex.Qdrant.RecommendPointGroups do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -741,8 +651,6 @@ defmodule Qdrantex.Qdrant.RecommendPointGroups do
 end
 
 defmodule Qdrantex.Qdrant.TargetVector do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :target, 0
@@ -751,8 +659,6 @@ defmodule Qdrantex.Qdrant.TargetVector do
 end
 
 defmodule Qdrantex.Qdrant.VectorExample do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :example, 0
@@ -762,8 +668,6 @@ defmodule Qdrantex.Qdrant.VectorExample do
 end
 
 defmodule Qdrantex.Qdrant.ContextExamplePair do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :positive, 1, type: Qdrantex.Qdrant.VectorExample
@@ -771,8 +675,6 @@ defmodule Qdrantex.Qdrant.ContextExamplePair do
 end
 
 defmodule Qdrantex.Qdrant.DiscoverPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -809,8 +711,6 @@ defmodule Qdrantex.Qdrant.DiscoverPoints do
 end
 
 defmodule Qdrantex.Qdrant.DiscoverBatchPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -829,8 +729,6 @@ defmodule Qdrantex.Qdrant.DiscoverBatchPoints do
 end
 
 defmodule Qdrantex.Qdrant.CountPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -849,8 +747,6 @@ defmodule Qdrantex.Qdrant.CountPoints do
 end
 
 defmodule Qdrantex.Qdrant.PointsUpdateOperation.PointStructList do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :points, 1, repeated: true, type: Qdrantex.Qdrant.PointStruct
@@ -862,8 +758,6 @@ defmodule Qdrantex.Qdrant.PointsUpdateOperation.PointStructList do
 end
 
 defmodule Qdrantex.Qdrant.PointsUpdateOperation.SetPayload.PayloadEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -871,8 +765,6 @@ defmodule Qdrantex.Qdrant.PointsUpdateOperation.SetPayload.PayloadEntry do
 end
 
 defmodule Qdrantex.Qdrant.PointsUpdateOperation.SetPayload do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :payload, 1,
@@ -894,8 +786,6 @@ defmodule Qdrantex.Qdrant.PointsUpdateOperation.SetPayload do
 end
 
 defmodule Qdrantex.Qdrant.PointsUpdateOperation.DeletePayload do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :keys, 1, repeated: true, type: :string
@@ -912,8 +802,6 @@ defmodule Qdrantex.Qdrant.PointsUpdateOperation.DeletePayload do
 end
 
 defmodule Qdrantex.Qdrant.PointsUpdateOperation.UpdateVectors do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :points, 1, repeated: true, type: Qdrantex.Qdrant.PointVectors
@@ -925,8 +813,6 @@ defmodule Qdrantex.Qdrant.PointsUpdateOperation.UpdateVectors do
 end
 
 defmodule Qdrantex.Qdrant.PointsUpdateOperation.DeleteVectors do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :points_selector, 1, type: Qdrantex.Qdrant.PointsSelector, json_name: "pointsSelector"
@@ -939,8 +825,6 @@ defmodule Qdrantex.Qdrant.PointsUpdateOperation.DeleteVectors do
 end
 
 defmodule Qdrantex.Qdrant.PointsUpdateOperation.DeletePoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :points, 1, type: Qdrantex.Qdrant.PointsSelector
@@ -952,8 +836,6 @@ defmodule Qdrantex.Qdrant.PointsUpdateOperation.DeletePoints do
 end
 
 defmodule Qdrantex.Qdrant.PointsUpdateOperation.ClearPayload do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :points, 1, type: Qdrantex.Qdrant.PointsSelector
@@ -965,8 +847,6 @@ defmodule Qdrantex.Qdrant.PointsUpdateOperation.ClearPayload do
 end
 
 defmodule Qdrantex.Qdrant.PointsUpdateOperation do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :operation, 0
@@ -1022,8 +902,6 @@ defmodule Qdrantex.Qdrant.PointsUpdateOperation do
 end
 
 defmodule Qdrantex.Qdrant.UpdateBatchPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -1033,8 +911,6 @@ defmodule Qdrantex.Qdrant.UpdateBatchPoints do
 end
 
 defmodule Qdrantex.Qdrant.PointsOperationResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: Qdrantex.Qdrant.UpdateResult
@@ -1042,8 +918,6 @@ defmodule Qdrantex.Qdrant.PointsOperationResponse do
 end
 
 defmodule Qdrantex.Qdrant.UpdateResult do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :operation_id, 1, proto3_optional: true, type: :uint64, json_name: "operationId"
@@ -1051,8 +925,6 @@ defmodule Qdrantex.Qdrant.UpdateResult do
 end
 
 defmodule Qdrantex.Qdrant.ScoredPoint.PayloadEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -1060,8 +932,6 @@ defmodule Qdrantex.Qdrant.ScoredPoint.PayloadEntry do
 end
 
 defmodule Qdrantex.Qdrant.ScoredPoint do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :id, 1, type: Qdrantex.Qdrant.PointId
@@ -1077,8 +947,6 @@ defmodule Qdrantex.Qdrant.ScoredPoint do
 end
 
 defmodule Qdrantex.Qdrant.GroupId do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :kind, 0
@@ -1089,8 +957,6 @@ defmodule Qdrantex.Qdrant.GroupId do
 end
 
 defmodule Qdrantex.Qdrant.PointGroup do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :id, 1, type: Qdrantex.Qdrant.GroupId
@@ -1099,16 +965,12 @@ defmodule Qdrantex.Qdrant.PointGroup do
 end
 
 defmodule Qdrantex.Qdrant.GroupsResult do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :groups, 1, repeated: true, type: Qdrantex.Qdrant.PointGroup
 end
 
 defmodule Qdrantex.Qdrant.SearchResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, repeated: true, type: Qdrantex.Qdrant.ScoredPoint
@@ -1116,16 +978,12 @@ defmodule Qdrantex.Qdrant.SearchResponse do
 end
 
 defmodule Qdrantex.Qdrant.BatchResult do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, repeated: true, type: Qdrantex.Qdrant.ScoredPoint
 end
 
 defmodule Qdrantex.Qdrant.SearchBatchResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, repeated: true, type: Qdrantex.Qdrant.BatchResult
@@ -1133,8 +991,6 @@ defmodule Qdrantex.Qdrant.SearchBatchResponse do
 end
 
 defmodule Qdrantex.Qdrant.SearchGroupsResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: Qdrantex.Qdrant.GroupsResult
@@ -1142,8 +998,6 @@ defmodule Qdrantex.Qdrant.SearchGroupsResponse do
 end
 
 defmodule Qdrantex.Qdrant.CountResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: Qdrantex.Qdrant.CountResult
@@ -1151,8 +1005,6 @@ defmodule Qdrantex.Qdrant.CountResponse do
 end
 
 defmodule Qdrantex.Qdrant.ScrollResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :next_page_offset, 1,
@@ -1165,16 +1017,12 @@ defmodule Qdrantex.Qdrant.ScrollResponse do
 end
 
 defmodule Qdrantex.Qdrant.CountResult do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :count, 1, type: :uint64
 end
 
 defmodule Qdrantex.Qdrant.RetrievedPoint.PayloadEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -1182,8 +1030,6 @@ defmodule Qdrantex.Qdrant.RetrievedPoint.PayloadEntry do
 end
 
 defmodule Qdrantex.Qdrant.RetrievedPoint do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :id, 1, type: Qdrantex.Qdrant.PointId
@@ -1197,8 +1043,6 @@ defmodule Qdrantex.Qdrant.RetrievedPoint do
 end
 
 defmodule Qdrantex.Qdrant.GetResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, repeated: true, type: Qdrantex.Qdrant.RetrievedPoint
@@ -1206,8 +1050,6 @@ defmodule Qdrantex.Qdrant.GetResponse do
 end
 
 defmodule Qdrantex.Qdrant.RecommendResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, repeated: true, type: Qdrantex.Qdrant.ScoredPoint
@@ -1215,8 +1057,6 @@ defmodule Qdrantex.Qdrant.RecommendResponse do
 end
 
 defmodule Qdrantex.Qdrant.RecommendBatchResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, repeated: true, type: Qdrantex.Qdrant.BatchResult
@@ -1224,8 +1064,6 @@ defmodule Qdrantex.Qdrant.RecommendBatchResponse do
 end
 
 defmodule Qdrantex.Qdrant.DiscoverResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, repeated: true, type: Qdrantex.Qdrant.ScoredPoint
@@ -1233,8 +1071,6 @@ defmodule Qdrantex.Qdrant.DiscoverResponse do
 end
 
 defmodule Qdrantex.Qdrant.DiscoverBatchResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, repeated: true, type: Qdrantex.Qdrant.BatchResult
@@ -1242,8 +1078,6 @@ defmodule Qdrantex.Qdrant.DiscoverBatchResponse do
 end
 
 defmodule Qdrantex.Qdrant.RecommendGroupsResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: Qdrantex.Qdrant.GroupsResult
@@ -1251,8 +1085,6 @@ defmodule Qdrantex.Qdrant.RecommendGroupsResponse do
 end
 
 defmodule Qdrantex.Qdrant.UpdateBatchResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, repeated: true, type: Qdrantex.Qdrant.UpdateResult
@@ -1260,8 +1092,6 @@ defmodule Qdrantex.Qdrant.UpdateBatchResponse do
 end
 
 defmodule Qdrantex.Qdrant.Filter do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :should, 1, repeated: true, type: Qdrantex.Qdrant.Condition
@@ -1275,8 +1105,6 @@ defmodule Qdrantex.Qdrant.Filter do
 end
 
 defmodule Qdrantex.Qdrant.MinShould do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :conditions, 1, repeated: true, type: Qdrantex.Qdrant.Condition
@@ -1284,8 +1112,6 @@ defmodule Qdrantex.Qdrant.MinShould do
 end
 
 defmodule Qdrantex.Qdrant.Condition do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :condition_one_of, 0
@@ -1299,32 +1125,24 @@ defmodule Qdrantex.Qdrant.Condition do
 end
 
 defmodule Qdrantex.Qdrant.IsEmptyCondition do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
 end
 
 defmodule Qdrantex.Qdrant.IsNullCondition do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
 end
 
 defmodule Qdrantex.Qdrant.HasIdCondition do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :has_id, 1, repeated: true, type: Qdrantex.Qdrant.PointId, json_name: "hasId"
 end
 
 defmodule Qdrantex.Qdrant.NestedCondition do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -1332,8 +1150,6 @@ defmodule Qdrantex.Qdrant.NestedCondition do
 end
 
 defmodule Qdrantex.Qdrant.FieldCondition do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -1347,8 +1163,6 @@ defmodule Qdrantex.Qdrant.FieldCondition do
 end
 
 defmodule Qdrantex.Qdrant.Match do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :match_value, 0
@@ -1372,24 +1186,18 @@ defmodule Qdrantex.Qdrant.Match do
 end
 
 defmodule Qdrantex.Qdrant.RepeatedStrings do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :strings, 1, repeated: true, type: :string
 end
 
 defmodule Qdrantex.Qdrant.RepeatedIntegers do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :integers, 1, repeated: true, type: :int64
 end
 
 defmodule Qdrantex.Qdrant.Range do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :lt, 1, proto3_optional: true, type: :double
@@ -1399,8 +1207,6 @@ defmodule Qdrantex.Qdrant.Range do
 end
 
 defmodule Qdrantex.Qdrant.DatetimeRange do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :lt, 1, proto3_optional: true, type: Google.Protobuf.Timestamp
@@ -1410,8 +1216,6 @@ defmodule Qdrantex.Qdrant.DatetimeRange do
 end
 
 defmodule Qdrantex.Qdrant.GeoBoundingBox do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :top_left, 1, type: Qdrantex.Qdrant.GeoPoint, json_name: "topLeft"
@@ -1419,8 +1223,6 @@ defmodule Qdrantex.Qdrant.GeoBoundingBox do
 end
 
 defmodule Qdrantex.Qdrant.GeoRadius do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :center, 1, type: Qdrantex.Qdrant.GeoPoint
@@ -1428,16 +1230,12 @@ defmodule Qdrantex.Qdrant.GeoRadius do
 end
 
 defmodule Qdrantex.Qdrant.GeoLineString do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :points, 1, repeated: true, type: Qdrantex.Qdrant.GeoPoint
 end
 
 defmodule Qdrantex.Qdrant.GeoPolygon do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :exterior, 1, type: Qdrantex.Qdrant.GeoLineString
@@ -1445,8 +1243,6 @@ defmodule Qdrantex.Qdrant.GeoPolygon do
 end
 
 defmodule Qdrantex.Qdrant.ValuesCount do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :lt, 1, proto3_optional: true, type: :uint64
@@ -1456,8 +1252,6 @@ defmodule Qdrantex.Qdrant.ValuesCount do
 end
 
 defmodule Qdrantex.Qdrant.PointsSelector do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :points_selector_one_of, 0
@@ -1467,16 +1261,12 @@ defmodule Qdrantex.Qdrant.PointsSelector do
 end
 
 defmodule Qdrantex.Qdrant.PointsIdsList do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :ids, 1, repeated: true, type: Qdrantex.Qdrant.PointId
 end
 
 defmodule Qdrantex.Qdrant.PointStruct.PayloadEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -1484,8 +1274,6 @@ defmodule Qdrantex.Qdrant.PointStruct.PayloadEntry do
 end
 
 defmodule Qdrantex.Qdrant.PointStruct do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :id, 1, type: Qdrantex.Qdrant.PointId
@@ -1494,8 +1282,6 @@ defmodule Qdrantex.Qdrant.PointStruct do
 end
 
 defmodule Qdrantex.Qdrant.GeoPoint do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :lon, 1, type: :double

@@ -1,6 +1,4 @@
 defmodule Qdrantex.Qdrant.Points.Service do
-  @moduledoc false
-
   use GRPC.Service, name: "qdrant.Points", protoc_gen_elixir_version: "0.12.0"
 
   rpc :Upsert, Qdrantex.Qdrant.UpsertPoints, Qdrantex.Qdrant.PointsOperationResponse
@@ -57,7 +55,5 @@ defmodule Qdrantex.Qdrant.Points.Service do
 end
 
 defmodule Qdrantex.Qdrant.Points.Stub do
-  @moduledoc false
-
   use GRPC.Stub, service: Qdrantex.Qdrant.Points.Service
 end

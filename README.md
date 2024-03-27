@@ -74,43 +74,38 @@ or
       ]
 ```
 
+### mTLS Configuration
+
+Add ssl config to repo opts
+
+```elixir
+import Config
+
+config :my_app, MyApp.QdrantRepo
+  ssl: [
+    cacertfile: Path.expand("./ca.crt", :code.priv_dir(:myapp)), 
+    certfile: Path.expand("./client.crt", :code.priv_dir(:myapp)), 
+    keyfile: Path.expand("./client.key", :code.priv_dir(:myapp)),
+    verify: :verify_peer,
+    server_name_indication: 'myapp'
+]
+```
+
+
 ## Versions match
 
 `MAJOR.MINOR` version for this library matches `MAJOR.MINOR` version of QDrant's protbuf
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `qdrantex` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `qdrantex` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:qdrantex, "~> 0.1.0"}
+    {:qdrantex, "~> 1.8.0"}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/qdrantex>.
-
-
-
-{:ok, chan} = GRPC.Stub.connect("localhost:6334", interceptors: [GRPC.Client.Interceptors.Logger])
-chan |> Qdrantex.Qdrantex.Stub.health_check(Qdrantex.HealthCheckRequest.new())
-
-
-## mTLS Configuration
-
-Add ssl config to repo opts
-
-```elixir
-ssl: [
-  cacertfile: Path.expand("./ca.crt", :code.priv_dir(:myapp)), 
-  certfile: Path.expand("./client.crt", :code.priv_dir(:myapp)), 
-  keyfile: Path.expand("./client.key", :code.priv_dir(:myapp)),
-  verify: :verify_peer,
-  server_name_indication: 'myapp'
-]
-```
+The docs can be found at <https://hexdocs.pm/qdrantex>.

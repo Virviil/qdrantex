@@ -1,6 +1,4 @@
 defmodule Qdrantex.Qdrant.ShardSnapshotPriority do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :ShardSnapshotPriorityNoSync, 0
@@ -10,8 +8,6 @@ defmodule Qdrantex.Qdrant.ShardSnapshotPriority do
 end
 
 defmodule Qdrantex.Qdrant.CreateShardSnapshotRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -19,8 +15,6 @@ defmodule Qdrantex.Qdrant.CreateShardSnapshotRequest do
 end
 
 defmodule Qdrantex.Qdrant.ListShardSnapshotsRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -28,8 +22,6 @@ defmodule Qdrantex.Qdrant.ListShardSnapshotsRequest do
 end
 
 defmodule Qdrantex.Qdrant.DeleteShardSnapshotRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -38,8 +30,6 @@ defmodule Qdrantex.Qdrant.DeleteShardSnapshotRequest do
 end
 
 defmodule Qdrantex.Qdrant.RecoverShardSnapshotRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -58,8 +48,6 @@ defmodule Qdrantex.Qdrant.RecoverShardSnapshotRequest do
 end
 
 defmodule Qdrantex.Qdrant.ShardSnapshotLocation do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :location, 0
@@ -69,16 +57,12 @@ defmodule Qdrantex.Qdrant.ShardSnapshotLocation do
 end
 
 defmodule Qdrantex.Qdrant.RecoverSnapshotResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :time, 1, type: :double
 end
 
 defmodule Qdrantex.Qdrant.ShardSnapshots.Service do
-  @moduledoc false
-
   use GRPC.Service, name: "qdrant.ShardSnapshots", protoc_gen_elixir_version: "0.12.0"
 
   rpc :Create, Qdrantex.Qdrant.CreateShardSnapshotRequest, Qdrantex.Qdrant.CreateSnapshotResponse
@@ -93,7 +77,5 @@ defmodule Qdrantex.Qdrant.ShardSnapshots.Service do
 end
 
 defmodule Qdrantex.Qdrant.ShardSnapshots.Stub do
-  @moduledoc false
-
   use GRPC.Stub, service: Qdrantex.Qdrant.ShardSnapshots.Service
 end

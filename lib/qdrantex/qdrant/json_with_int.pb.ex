@@ -1,14 +1,10 @@
 defmodule Qdrantex.Qdrant.NullValue do
-  @moduledoc false
-
   use Protobuf, enum: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :NULL_VALUE, 0
 end
 
 defmodule Qdrantex.Qdrant.Struct.FieldsEntry do
-  @moduledoc false
-
   use Protobuf, map: true, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :key, 1, type: :string
@@ -16,16 +12,12 @@ defmodule Qdrantex.Qdrant.Struct.FieldsEntry do
 end
 
 defmodule Qdrantex.Qdrant.Struct do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :fields, 1, repeated: true, type: Qdrantex.Qdrant.Struct.FieldsEntry, map: true
 end
 
 defmodule Qdrantex.Qdrant.Value do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :kind, 0
@@ -45,8 +37,6 @@ defmodule Qdrantex.Qdrant.Value do
 end
 
 defmodule Qdrantex.Qdrant.ListValue do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :values, 1, repeated: true, type: Qdrantex.Qdrant.Value

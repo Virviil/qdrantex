@@ -1,6 +1,4 @@
 defmodule Qdrantex.Qdrant.GetCollectionInfoRequestInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :get_collectionInfoRequest, 1,
@@ -11,8 +9,6 @@ defmodule Qdrantex.Qdrant.GetCollectionInfoRequestInternal do
 end
 
 defmodule Qdrantex.Qdrant.InitiateShardTransferRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -20,8 +16,6 @@ defmodule Qdrantex.Qdrant.InitiateShardTransferRequest do
 end
 
 defmodule Qdrantex.Qdrant.WaitForShardStateRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -31,8 +25,6 @@ defmodule Qdrantex.Qdrant.WaitForShardStateRequest do
 end
 
 defmodule Qdrantex.Qdrant.GetShardRecoveryPointRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -40,8 +32,6 @@ defmodule Qdrantex.Qdrant.GetShardRecoveryPointRequest do
 end
 
 defmodule Qdrantex.Qdrant.GetShardRecoveryPointResponse do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :recovery_point, 1, type: Qdrantex.Qdrant.RecoveryPoint, json_name: "recoveryPoint"
@@ -49,16 +39,12 @@ defmodule Qdrantex.Qdrant.GetShardRecoveryPointResponse do
 end
 
 defmodule Qdrantex.Qdrant.RecoveryPoint do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :clocks, 1, repeated: true, type: Qdrantex.Qdrant.RecoveryPointClockTag
 end
 
 defmodule Qdrantex.Qdrant.RecoveryPointClockTag do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :peer_id, 1, type: :uint64, json_name: "peerId"
@@ -68,8 +54,6 @@ defmodule Qdrantex.Qdrant.RecoveryPointClockTag do
 end
 
 defmodule Qdrantex.Qdrant.UpdateShardCutoffPointRequest do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -78,8 +62,6 @@ defmodule Qdrantex.Qdrant.UpdateShardCutoffPointRequest do
 end
 
 defmodule Qdrantex.Qdrant.CollectionsInternal.Service do
-  @moduledoc false
-
   use GRPC.Service, name: "qdrant.CollectionsInternal", protoc_gen_elixir_version: "0.12.0"
 
   rpc :Get,
@@ -104,7 +86,5 @@ defmodule Qdrantex.Qdrant.CollectionsInternal.Service do
 end
 
 defmodule Qdrantex.Qdrant.CollectionsInternal.Stub do
-  @moduledoc false
-
   use GRPC.Stub, service: Qdrantex.Qdrant.CollectionsInternal.Service
 end

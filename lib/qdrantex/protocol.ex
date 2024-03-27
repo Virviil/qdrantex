@@ -1,8 +1,12 @@
 defmodule Qdrantex.Error do
+  @moduledoc """
+  Error struct for Qdrantex
+  """
   defexception [:message]
 end
 
 defmodule Qdrantex.Protocol do
+  @moduledoc false
   use DBConnection
 
   defstruct [:chan]

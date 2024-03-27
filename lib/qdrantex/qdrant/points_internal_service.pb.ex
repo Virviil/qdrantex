@@ -1,6 +1,4 @@
 defmodule Qdrantex.Qdrant.SyncPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -12,8 +10,6 @@ defmodule Qdrantex.Qdrant.SyncPoints do
 end
 
 defmodule Qdrantex.Qdrant.SyncPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :sync_points, 1, type: Qdrantex.Qdrant.SyncPoints, json_name: "syncPoints"
@@ -26,8 +22,6 @@ defmodule Qdrantex.Qdrant.SyncPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.UpsertPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :upsert_points, 1, type: Qdrantex.Qdrant.UpsertPoints, json_name: "upsertPoints"
@@ -40,8 +34,6 @@ defmodule Qdrantex.Qdrant.UpsertPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.DeletePointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :delete_points, 1, type: Qdrantex.Qdrant.DeletePoints, json_name: "deletePoints"
@@ -54,8 +46,6 @@ defmodule Qdrantex.Qdrant.DeletePointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.UpdateVectorsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :update_vectors, 1, type: Qdrantex.Qdrant.UpdatePointVectors, json_name: "updateVectors"
@@ -68,8 +58,6 @@ defmodule Qdrantex.Qdrant.UpdateVectorsInternal do
 end
 
 defmodule Qdrantex.Qdrant.DeleteVectorsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :delete_vectors, 1, type: Qdrantex.Qdrant.DeletePointVectors, json_name: "deleteVectors"
@@ -82,8 +70,6 @@ defmodule Qdrantex.Qdrant.DeleteVectorsInternal do
 end
 
 defmodule Qdrantex.Qdrant.SetPayloadPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :set_payload_points, 1,
@@ -99,8 +85,6 @@ defmodule Qdrantex.Qdrant.SetPayloadPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.DeletePayloadPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :delete_payload_points, 1,
@@ -116,8 +100,6 @@ defmodule Qdrantex.Qdrant.DeletePayloadPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.ClearPayloadPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :clear_payload_points, 1,
@@ -133,8 +115,6 @@ defmodule Qdrantex.Qdrant.ClearPayloadPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.CreateFieldIndexCollectionInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :create_field_index_collection, 1,
@@ -150,8 +130,6 @@ defmodule Qdrantex.Qdrant.CreateFieldIndexCollectionInternal do
 end
 
 defmodule Qdrantex.Qdrant.DeleteFieldIndexCollectionInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :delete_field_index_collection, 1,
@@ -167,8 +145,6 @@ defmodule Qdrantex.Qdrant.DeleteFieldIndexCollectionInternal do
 end
 
 defmodule Qdrantex.Qdrant.PointsOperationResponseInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :result, 1, type: Qdrantex.Qdrant.UpdateResultInternal
@@ -176,8 +152,6 @@ defmodule Qdrantex.Qdrant.PointsOperationResponseInternal do
 end
 
 defmodule Qdrantex.Qdrant.UpdateResultInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :operation_id, 1, proto3_optional: true, type: :uint64, json_name: "operationId"
@@ -190,8 +164,6 @@ defmodule Qdrantex.Qdrant.UpdateResultInternal do
 end
 
 defmodule Qdrantex.Qdrant.ClockTag do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :peer_id, 1, type: :uint64, json_name: "peerId"
@@ -202,8 +174,6 @@ defmodule Qdrantex.Qdrant.ClockTag do
 end
 
 defmodule Qdrantex.Qdrant.SearchPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :search_points, 1, type: Qdrantex.Qdrant.SearchPoints, json_name: "searchPoints"
@@ -211,8 +181,6 @@ defmodule Qdrantex.Qdrant.SearchPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.SearchBatchPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -227,8 +195,6 @@ defmodule Qdrantex.Qdrant.SearchBatchPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.RecoQuery do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :positives, 1, repeated: true, type: Qdrantex.Qdrant.Vector
@@ -236,8 +202,6 @@ defmodule Qdrantex.Qdrant.RecoQuery do
 end
 
 defmodule Qdrantex.Qdrant.ContextPair do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :positive, 1, type: Qdrantex.Qdrant.Vector
@@ -245,8 +209,6 @@ defmodule Qdrantex.Qdrant.ContextPair do
 end
 
 defmodule Qdrantex.Qdrant.DiscoveryQuery do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :target, 1, type: Qdrantex.Qdrant.Vector
@@ -254,16 +216,12 @@ defmodule Qdrantex.Qdrant.DiscoveryQuery do
 end
 
 defmodule Qdrantex.Qdrant.ContextQuery do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :context, 1, repeated: true, type: Qdrantex.Qdrant.ContextPair
 end
 
 defmodule Qdrantex.Qdrant.QueryEnum do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   oneof :query, 0
@@ -283,8 +241,6 @@ defmodule Qdrantex.Qdrant.QueryEnum do
 end
 
 defmodule Qdrantex.Qdrant.CoreSearchPoints do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -309,8 +265,6 @@ defmodule Qdrantex.Qdrant.CoreSearchPoints do
 end
 
 defmodule Qdrantex.Qdrant.CoreSearchBatchPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :collection_name, 1, type: :string, json_name: "collectionName"
@@ -325,8 +279,6 @@ defmodule Qdrantex.Qdrant.CoreSearchBatchPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.ScrollPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :scroll_points, 1, type: Qdrantex.Qdrant.ScrollPoints, json_name: "scrollPoints"
@@ -334,8 +286,6 @@ defmodule Qdrantex.Qdrant.ScrollPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.RecommendPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :recommend_points, 1, type: Qdrantex.Qdrant.RecommendPoints, json_name: "recommendPoints"
@@ -343,8 +293,6 @@ defmodule Qdrantex.Qdrant.RecommendPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.GetPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :get_points, 1, type: Qdrantex.Qdrant.GetPoints, json_name: "getPoints"
@@ -352,8 +300,6 @@ defmodule Qdrantex.Qdrant.GetPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.CountPointsInternal do
-  @moduledoc false
-
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
   field :count_points, 1, type: Qdrantex.Qdrant.CountPoints, json_name: "countPoints"
@@ -361,8 +307,6 @@ defmodule Qdrantex.Qdrant.CountPointsInternal do
 end
 
 defmodule Qdrantex.Qdrant.PointsInternal.Service do
-  @moduledoc false
-
   use GRPC.Service, name: "qdrant.PointsInternal", protoc_gen_elixir_version: "0.12.0"
 
   rpc :Upsert,
@@ -425,7 +369,5 @@ defmodule Qdrantex.Qdrant.PointsInternal.Service do
 end
 
 defmodule Qdrantex.Qdrant.PointsInternal.Stub do
-  @moduledoc false
-
   use GRPC.Stub, service: Qdrantex.Qdrant.PointsInternal.Service
 end

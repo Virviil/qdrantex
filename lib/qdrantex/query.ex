@@ -1,4 +1,5 @@
 defmodule Qdrantex.Query do
+  @moduledoc false
   defstruct [:module, :rpc, :data]
 
   defimpl DBConnection.Query do
@@ -13,6 +14,7 @@ defmodule Qdrantex.Query do
 end
 
 defmodule Qdrantex.ClosureQuery do
+  @moduledoc false
   defstruct [:closure]
 
   defimpl DBConnection.Query do

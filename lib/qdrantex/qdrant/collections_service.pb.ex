@@ -1,6 +1,4 @@
 defmodule Qdrantex.Qdrant.Collections.Service do
-  @moduledoc false
-
   use GRPC.Service, name: "qdrant.Collections", protoc_gen_elixir_version: "0.12.0"
 
   rpc :Get, Qdrantex.Qdrant.GetCollectionInfoRequest, Qdrantex.Qdrant.GetCollectionInfoResponse
@@ -43,7 +41,5 @@ defmodule Qdrantex.Qdrant.Collections.Service do
 end
 
 defmodule Qdrantex.Qdrant.Collections.Stub do
-  @moduledoc false
-
   use GRPC.Stub, service: Qdrantex.Qdrant.Collections.Service
 end
