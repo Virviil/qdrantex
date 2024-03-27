@@ -17,6 +17,8 @@ defmodule Qdrantex do
               # Default opts
               pool_size: 10
             ]
+            # Opts from `using`
+            |> Keyword.merge(unquote(opts))
             # Adding data from config
             |> Keyword.merge(Application.get_all_env(unquote(opts[:otp_app])))
             # Merging start_link opts
@@ -27,7 +29,21 @@ defmodule Qdrantex do
       end
 
       def execute(module, rpc, data) do
-        DBConnection.execute(@name, %Qdrantex.Query{module: module, rpc: rpc, data: data}, [])
+        case DBConnection.execute(
+               @name,
+               %Qdrantex.Query{module: module, rpc: rpc, data: data},
+               []
+             ) do
+          {:ok, query, response} -> {:ok, response}
+          {:error, reason} -> {:error, reason}
+        end
+      end
+
+      def run(closure) do
+        case DBConnection.execute(@name, %Qdrantex.ClosureQuery{closure: closure}, []) do
+          {:ok, query, response} -> {:ok, response}
+          {:error, reason} -> {:error, reason}
+        end
       end
 
       def prepare(module, rpc, data) do
@@ -38,6 +54,5 @@ defmodule Qdrantex do
 end
 
 defmodule Qdrantex.Repo do
-  use Qdrantex,
-    otp_app: :qdrantex
+  use Qdrantex, otp_app: :qdrantex
 end

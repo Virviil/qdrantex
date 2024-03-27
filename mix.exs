@@ -4,8 +4,8 @@ defmodule Qdrantex.MixProject do
   def project do
     [
       app: :qdrantex,
-      version: "0.1.0",
-      elixir: "~> 1.14",
+      version: "1.8.0",
+      elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: aliases()
@@ -21,8 +21,11 @@ defmodule Qdrantex.MixProject do
 
   defp aliases() do
     [
+      "upd.proto": [
+        "cmd scripts/pull_proto.bash"
+      ],
       protoc: [
-        "cmd protoc -I proto --elixir_opt=package_prefix=qdrantex.pb --elixir_out=plugins=grpc:./lib/qdrantex/pb proto/*.proto"
+        "cmd protoc -I proto --elixir_opt=package_prefix=qdrantex --elixir_out=plugins=grpc:./lib/qdrantex/qdrant proto/*.proto"
       ]
     ]
   end
@@ -30,9 +33,9 @@ defmodule Qdrantex.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:grpc, "~> 0.5.0"},
-      {:protobuf, "~> 0.10"},
-      {:db_connection, "~> 2.4"}
+      {:grpc, "~> 0.7.0"},
+      {:protobuf, "~> 0.12.0"},
+      {:db_connection, "~> 2.6"}
     ]
   end
 end

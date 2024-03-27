@@ -17,11 +17,28 @@ defmodule Qdrantex.Protocol do
   ###################################################################
   @impl true
   def connect(opts) do
-    IO.inspect(opts)
     hostname = Keyword.get(opts, :hostname, "localhost")
     port = Keyword.get(opts, :port, 6334)
+    api_key = Keyword.get(opts, :api_key, nil)
+    ssl = Keyword.get(opts, :ssl, nil)
 
-    case GRPC.Stub.connect(hostname, port, accepted_compressors: [GRPC.Compressor.Gzip]) do
+    headers =
+      case api_key do
+        nil -> []
+        value when is_binary(value) -> [{"api-key", value}]
+      end
+
+    cred =
+      case ssl do
+        nil -> nil
+        config -> GRPC.Credential.new(ssl: config)
+      end
+
+    case GRPC.Stub.connect(hostname, port,
+           accepted_compressors: [GRPC.Compressor.Gzip],
+           cred: cred,
+           headers: headers
+         ) do
       {:ok, chan} ->
         {:ok, %__MODULE__{chan: chan}}
 
@@ -36,9 +53,9 @@ defmodule Qdrantex.Protocol do
           | {:disconnect, %Qdrantex.Error{__exception__: true, message: <<_::64, _::_*8>>},
              %{:chan => GRPC.Channel.t(), optional(any) => any}}
   def ping(%{chan: chan} = state) do
-    case Qdrantex.Pb.Qdrant.Qdrant.Stub.health_check(
+    case Qdrantex.Qdrant.Qdrant.Stub.health_check(
            chan,
-           Qdrantex.Pb.Qdrant.HealthCheckRequest.new()
+           %Qdrantex.Qdrant.HealthCheckRequest{}
          ) do
       {:ok, _} ->
         {:ok, state}
@@ -66,7 +83,7 @@ defmodule Qdrantex.Protocol do
 
   @impl true
   def handle_execute(
-        %{module: module, rpc: rpc, data: data} = query,
+        %Qdrantex.Query{module: module, rpc: rpc, data: data} = query,
         _params,
         _opts,
         %{chan: chan} = state
@@ -79,5 +96,64 @@ defmodule Qdrantex.Protocol do
         {:disconnect, %Qdrantex.Error{message: "error when executing query: #{inspect(reason)}"},
          state}
     end
+  end
+
+  def handle_execute(
+        %Qdrantex.ClosureQuery{closure: closure} = query,
+        _params,
+        _opts,
+        %{chan: chan} = state
+      ) do
+    case closure.(chan) do
+      {:ok, response} ->
+        {:ok, query, response, state}
+
+      {:error, reason} ->
+        {:disconnect, %Qdrantex.Error{message: "error when executing query: #{inspect(reason)}"},
+         state}
+    end
+  end
+
+  ###################################################################
+  # / Unused stubs
+  ###################################################################
+  @impl true
+  def handle_begin(opts, state) do
+    {:ok, opts, state}
+  end
+
+  @impl true
+  def handle_close(query, opts, state) do
+    {:ok, {query, opts}, state}
+  end
+
+  @impl true
+  def handle_commit(opts, state) do
+    {:ok, opts, state}
+  end
+
+  @impl true
+  def handle_deallocate(query, cursor, opts, state) do
+    {:ok, {query, cursor, opts}, state}
+  end
+
+  @impl true
+  def handle_declare(query, params, opts, state) do
+    {:ok, query, {params, opts}, state}
+  end
+
+  @impl true
+  def handle_fetch(query, cursor, opts, state) do
+    {:halt, {query, cursor, opts}, state}
+  end
+
+  @impl true
+  def handle_rollback(opts, state) do
+    {:ok, opts, state}
+  end
+
+  @impl true
+  def handle_status(_opts, state) do
+    {:idle, state}
   end
 end
