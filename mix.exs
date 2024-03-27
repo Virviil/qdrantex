@@ -21,7 +21,7 @@ defmodule Qdrantex.MixProject do
 
   defp aliases() do
     [
-      "upd.proto": [
+      "pb.pull": [
         "cmd scripts/pull_proto.bash"
       ],
       protoc: [

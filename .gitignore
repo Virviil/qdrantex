@@ -26,3 +26,4 @@ qdrantex-*.tar
 /tmp/
 
 /proto/
+/qdrant_storage/

@@ -1,6 +1,8 @@
 # Qdrantex
 
-**TODO: Add description**
+Client library and SDK for the [Qdrant](https://github.com/qdrant/qdrant) vector search engine.
+
+Library contains type definitions for all Qdrant API with gRPC.
 
 ## Quickstart
 
@@ -8,7 +10,7 @@
 
   ```elixir
   defmodule MyApp.QdrantRepo do
-  use Qdrantex,
+    use Qdrantex,
     otp_app: :my_app
   end
   ```
